@@ -47,21 +47,33 @@ def IOextract_member(x704557zip, member, targetpath, pwd):
         upperdirs = os.path.dirname(targetpath)
         
         if upperdirs and not os.path.isdir(upperdirs):
+            print upperdirs + str(os.path.isdir(upperdirs))
             #os.remove(upperdirs)
             if os.path.isfile(upperdirs):
                 os.remove(upperdirs)
             os.mkdir(upperdirs)
         
         # extract the files
-        source = x704557zip.open(member, pwd=pwd)
         try:
-            target = file(targetpath, "w+b")
+            source = x704557zip.open(member, pwd=pwd)
+            try:
+                target = file(targetpath, "w+b")
         
-            shutil.copyfileobj(source, target)
-            source.close()
-            target.close()
-        except:         
-            pass
+                shutil.copyfileobj(source, target)
+                source.close()
+                target.close()
+            except:         
+                pass
+        except:
+            source = x704557zip.open(member, pwd="1")
+            try:
+                target = file(targetpath, "w+b")
+        
+                shutil.copyfileobj(source, target)
+                source.close()
+                target.close()
+            except:         
+                pass
         return targetpath
         
 def main(argv=sys.argv):
