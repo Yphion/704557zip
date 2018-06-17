@@ -10,7 +10,11 @@ It is a slightly modified version of the python zifpile class.
 5. Locate your extracted archive.
 
 Note 1: DO NOT edit the batch file. DO NOT edit the python file. Edits may lead to sever system damage. All lines are INTENDED.
+
 Note 2: Follow the instructions above to avoid running into unexpected errors.
+
 Note 3: Do not extract the same archive twice OR empty the output directory before you do so.
+
 Note 4: DO NOT use 704557zip on archives from untrusted sources.
+
 Note 5: DO NOT ignore Note 1 and DO NOT try to circumvent it by any means.
